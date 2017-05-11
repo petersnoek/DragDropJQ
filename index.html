@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drag & Drop example</title>
+
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+ 	<style>
+  		#draggable { width: 150px; height: 150px; padding: 0.5em; cursor:move;}
+  	</style>
+ 
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.12.1.min.js"></script>
+	<script>
+		$( function() {
+			console.log('$( "#draggable" ).draggable();');
+			// here we tell the "draggable" that is should have a "stop" event
+			$( "#draggable" ).draggable({ stop: function( event, ui ) {} });
+
+			$( "#draggable" ).on( "dragstop", function( event, ui ) {
+				// this will be executed when dragging stops
+				console.log('stopped dragging: ');
+				console.log(ui);
+			} );
+		} );
+	</script>
+
+</head>
+<body>
+
+
+<div id="draggable" class="ui-widget-content">
+  <p>Drag me around</p>
+</div>
+
+This is Hello World by HTML
+
+<div id="msgid">
+</div>
+
+
+
+</body>
+</html>
